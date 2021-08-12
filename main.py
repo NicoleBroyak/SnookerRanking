@@ -2,38 +2,47 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def ranking_update():
+def ranking_get():
+    url = "https://livescores.worldsnookerdata.com/Rankings/Index/14463"
+    page = requests.get(url)
+    return page
+
+
+def ranking_parser(page):
+    soup = BeautifulSoup(page.content, "html.parser")
+    return soup
+
+
+def scrape_table(soup):
+    ths = soup.find_all("th")
+    tds = soup.find_all("td")
+    return ths + tds
+
+
+def create_elements_list():
+    elems = []
+    for items in content:
+        elems.append(items.text.strip())
+    return elems
+
+
+def write_elem_to_csv():
+    length = 0
     file = open("Ranking.csv", "w")
     file.write("")
     file.close()
-    url = "https://livescores.worldsnookerdata.com/Rankings/Index/14463"
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, "html.parser")
-    ths = soup.find_all("th")
-    tds = soup.find_all("td")
-    length1 = 0
-    for th in ths:
-        soup.find("th")
-        length = len(th.text.strip()) + 1
-        file = open("Ranking.csv", "a")
-        file.write(th.text.strip() + ";")
-        length1 += length
-    file.truncate(length1 - 1)
-    file.write("\n")
-    count = 0
-    for td in tds:
-        soup.find("td")
-        length = len(td.text.strip()) + 1
-        file = open("Ranking.csv", "a")
-        file.write(td.text.strip() + ";")
-        length1 += length
-        count += 1
-        if count == 5:
-            file = open("Ranking.csv", "a")
-            file.truncate(length1 - 1)
+    file = open("Ranking.csv", "a")
+    for count in range(0, len(elements)):
+        file.write(elements[count] + ";")
+        length += len(elements[count]) + 1
+        if not (count + 1) % 5:
+            file.truncate(length - 1)
             file.write("\n")
-            count = 0
-    print("Ranking update finished")
+        count += 1
+    file.close()
+
+
+def repl_commas():
     file = open("Ranking.csv")
     rep = file.read().replace(",", "")
     file.close()
@@ -48,4 +57,9 @@ def ranking_update():
     file.close()
 
 
-ranking_update()
+ranking_page = ranking_get()
+parser = ranking_parser(ranking_page)
+content = scrape_table(parser)
+elements = create_elements_list()
+write_elem_to_csv()
+repl_commas()
