@@ -27,23 +27,6 @@ def create_elements_list():
         elems.append(items.text.strip())
     return elems
 
-
-def write_elem_to_csv():
-    length = 0
-    file = open("Ranking.csv", "w")
-    file.write("")
-    file.close()
-    file = open("Ranking.csv", "a")
-    for count in range(0, len(elements)):
-        file.write(elements[count] + ";")
-        length += len(elements[count]) + 1
-        if not (count + 1) % 5:
-            file.truncate(length - 1)
-            file.write("\n")
-        count += 1
-    file.close()
-
-
 def write_elems_to_csv():
     length = 0
     file_path = pathlib.Path("Ranking.csv")
