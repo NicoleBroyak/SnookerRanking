@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
+import pathlib
+import logging
 
 
 def ranking_get():
@@ -42,24 +44,54 @@ def write_elem_to_csv():
     file.close()
 
 
+def write_elems_to_csv():
+    length = 0
+    file_path = pathlib.Path("Ranking.csv")
+    try:
+        with file_path.open(mode="w") as file:
+            file.write("")
+    except OSError:
+        logging.error("Error11")
+    try:
+        with file_path.open(mode="a") as file:
+            for count in range(0, len(elements)):
+                file.write(elements[count] + ";")
+                length += len(elements[count]) + 1
+                if not (count + 1) % 5:
+                    file.truncate(length - 1)
+                    file.write("\n")
+                count += 1
+    except OSError:
+        logging.error("Error")
+
+
 def repl_commas():
-    file = open("Ranking.csv")
-    rep = file.read().replace(",", "")
-    file.close()
-    file = open("Ranking.csv", "w")
-    file.write(rep)
-    file.close()
-    file = open("Ranking.csv")
-    rep = file.read().replace(";", ",")
-    file.close()
-    file = open("Ranking.csv", "w")
-    file.write(rep)
-    file.close()
+    file_path = pathlib.Path("Ranking.csv")
+    try:
+        with file_path.open() as file:
+            rep = file.read().replace(",", "")
+    except OSError:
+        logging.error("Error")
+    try:
+        with file_path.open(mode="w") as file:
+            file.write(rep)
+    except OSError:
+        logging.error("Error")
+    try:
+        with file_path.open() as file:
+            rep = file.read().replace(";", ",")
+    except OSError:
+        logging.error("Error")
+    try:
+        with file_path.open(mode="w") as file:
+            file.write(rep)
+    except OSError:
+        logging.error("Error")
 
 
 ranking_page = ranking_get()
 parser = ranking_parser(ranking_page)
 content = scrape_table(parser)
 elements = create_elements_list()
-write_elem_to_csv()
+write_elems_to_csv()
 repl_commas()

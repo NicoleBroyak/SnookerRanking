@@ -1,5 +1,5 @@
 Pos,Live Pos,Player,Points,Live Points
-1,1,Judd Trump,1370000,1374000
+1,1,Judd Trump,1370000,1376000
 2,2,Mark Selby,1246000,1246000
 3,3,Ronnie O'Sullivan,861000,864000
 4,4,Neil Robertson,785500,785500
@@ -9,8 +9,8 @@ Pos,Live Pos,Player,Points,Live Points
 8,8,Ding Junhui,376750,376750
 9,9,Stephen Maguire,367000,367000
 10,10,Yan Bingtao,314000,320000
-11,11,Mark Williams,306250,308250
-12,12,Mark Allen,302000,306000
+12,11,Mark Allen,302000,310000
+11,12,Mark Williams,306250,308250
 13,13,Barry Hawkins,292750,296750
 15,14,Stuart Bingham,281000,287000
 14,15,Jack Lisowski,281250,281250
@@ -19,9 +19,9 @@ Pos,Live Pos,Player,Points,Live Points
 18,18,Graeme Dott,199250,204250
 19,19,Thepchaiya Un-Nooh,188000,190000
 20,20,Joe Perry,187500,189500
-23,21,David Gilbert,162500,170500
-21,22,Kurt Maflin,169000,169000
-22,23,Tom Ford,163250,167250
+22,21,Tom Ford,163250,171250
+23,22,David Gilbert,162500,170500
+21,23,Kurt Maflin,169000,169000
 24,24,Ali Carter,156000,164000
 25,25,Martin Gould,151250,152250
 26,26,Zhao Xintong,149750,151750
@@ -30,7 +30,7 @@ Pos,Live Pos,Player,Points,Live Points
 30,29,Matthew Selt,136750,141750
 29,30,Xiao Guodong,139000,139000
 31,31,Michael Holt,136000,138000
-32,32,Ricky Walden,129250,133250
+32,32,Ricky Walden,129250,135250
 33,33,Gary Wilson,124000,125000
 34,34,Scott Donaldson,121750,121750
 35,35,Lu Ning,116250,116250
@@ -59,8 +59,8 @@ Pos,Live Pos,Player,Points,Live Points
 59,58,David Grace,83750,85750
 58,59,Tian Pengfei,83750,83750
 60,60,Chris Wakelin,79250,79250
-61,61,Dominic Dale,77250,78250
-63,62,Jimmy Robertson,74000,78000
+63,61,Jimmy Robertson,74000,79000
+61,62,Dominic Dale,77250,78250
 62,63,Joe O'Connor,76250,77250
 64,64,Nigel Bond,71750,72750
 65,65,Jak Jones,53500,54500
@@ -90,9 +90,9 @@ Pos,Live Pos,Player,Points,Live Points
 92,89,Chang Bingyu,0,6000
 89,90,Farakh Ajaib,4500,5500
 112,91,Craig Steadman,0,5000
-88,92,Stephen Hendry,5000,5000
-97,93,Gerard Greene,0,4000
-100,94,Peter Lines,0,4000
+100,92,Peter Lines,0,5000
+88,93,Stephen Hendry,5000,5000
+97,94,Gerard Greene,0,4000
 90,95,Iulian Boiko,3000,3000
 94,96,Louis Heathcote,0,2000
 102,97,Mitchell Mann,0,2000
